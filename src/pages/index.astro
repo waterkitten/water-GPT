@@ -1,54 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import Generator from '../components/Generator'
+import Layout from "~/layouts/Layout.astro"
+import Header from "~/components/Header.astro"
+import Generator from "~/components/Generator"
+import "~/styles/global.css"
+import "@unocss/reset/tailwind.css"
+import "katex/dist/katex.min.css"
+import "highlight.js/styles/atom-one-dark.css"
 ---
 
-<Layout title="ChatGPT API Demo">
+<Layout title="ChatGPT">
   <main>
     <Header />
     <Generator client:load />
-    <Footer />
   </main>
 </Layout>
-
-<script>
-  function password() {
-
-var testV = 1;
-
-var pass1 = prompt('请输入密码','');
-
-while (testV < 3) {
-
-if (!pass1)
-
-history.go(-1);
-
-if (pass1 == "sdsdsdsdsd") {//初始密码123
-
-alert('密码正确');
-
-break;
-
-}
-
-testV+=1;
-
-var pass1 =
-
-prompt('密码错误!请重新输入:');
-
-}
-
-if (pass1!="password" & testV ==3)
-
-history.go(-1);
-
-return " ";
-
-}
-
-document.write(password());
-</script>
