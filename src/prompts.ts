@@ -686,14 +686,15 @@ Emphasize improving the fluency, naturalness, and readability of the generated t
 Based on adversarial detection metrics:
 Maintain the original requirements, but the values of GLTR (ideally 0.2) and GPT-3 Detector (ideally 0) can be adjusted appropriately to ensure that the generated text is more natural and more like human writing.
 Content and format requirements for the generated text:
-Polish the text in native, objective, professional, and academic Chinese, and replace all instances of "we" with "this study."
+Polish the text in native, objective, professional, and academic Chinese, and replace all instances of "我们" with "本研究"
 Retain the core information of the text and ensure that the original meaning is fully expressed.
 Use more academic and professional language expressions.
 Do not change the expression form of professional terms.
 Ensure that the citations in [] remain unchanged, and do not add parentheses outside [].
 Please note that if it is unavoidable to repeat the original text, prevent continuous repetition of the same content for more than 10 characters (about 7 tokens).
-Your writing should be phrased in academic and professional tone and the language should be based on the content I provide you with.
-If you understand, please respond with “我明白了，请提供你要降重的文段” and I will provide in next chat loops.`
+Your writing should be phrased in academic and professional tone.
+All your responses should be Chinese in every chat loop, just generate optimized texts without explanation.
+If you understand, please respond with “请提供需要降重的文段” and I will provide in next chat loops.`
   },
   {
     desc: "扩写1.0",
@@ -720,9 +721,9 @@ Preserve the core information of the text, ensuring the original intent is fully
 Please avoid repeating similar sentences as much as possible.
 Do not alter the representation of professional terms.
 
-If you understand, please respond "请提供需要扩写的内容" and I will provide you with my thesis framework in next chat loop.
+All your responses should be Chinese in every chat loop, just generate optimized texts without explanation.
 
-Your writing should be phrased in academic tone based on the language of the thesis framework I provide.`
+If you understand, please respond "请提供需要扩写的内容" and I will provide you with my thesis framework in next chat loop.`
   },
   {
     desc: "引用1.0（摘要专属）",
@@ -748,7 +749,8 @@ GLTR values of 0.2 are suitable, and GPT-3 Detector values of 0 are appropriate.
 ---
 If you understand, please respond "请提供需要引用/总结的摘要" and I will provide you with the content you need to sumarize in next chat loop.
 
-Your writing should be phrased in academic and professional tone and the language should be based on the content I provide you with.`
+Your writing should be phrased in academic and professional tone.
+All your responses should be Chinese in every chat loop, just generate optimized texts without explanation.`
  },
  {
     desc: "引用2.0（内容专属）",
@@ -771,30 +773,28 @@ GLTR values of 0.2 are suitable, and GPT-3 Detector values of 0 are appropriate.
 ---
 If you understand, please send "请提供需要引用/总结的内容",and I will provide you with the content you need to sumarize in next chat loop.
 
-Your summary should be phrased in academic and professional tone and the language should be based on the content I provide you with.`
+Your summary should be phrased in academic and professional tone.
+All your responses should be Chinese in every chat loop, just generate optimized texts without explanation.`
   },
   {
     desc: "润色1.0",
-    prompt: `Please optimize the given article by making it as clear, academic, concise, objective, and logical as possible. Your task should include correcting any grammatical errors in the original text, such as errors in word type and word order, subject-verb agreement, pronoun usage, punctuation, modifiers and attributive clauses, and sentence structure. 
-Additionally, you should ensure accuracy of the information presented in the text while also retaining its core content to the greatest extent. Please be sure to fact-check your work and provide logically sound reasoning where applicable.
-Retain the references in [] provided by me, and strictly follow their format.
-Avoid using subjective expressions such as “我们”or “研究者” and use “本研究” instead.
-
-optimized language requirements below
----
-Metrics based on reference text:
-Significantly reduce the similarity between the generated text and the reference text.
-Use evaluation metrics like BLEU, ROUGE, and METEOR within an appropriate range, with scores between 0.5 and 0.8 considered suitable.
-Metrics based on language models:
-Improve the fluency and reasonableness of the generated text.
-Avoid unreasonable or contradictory content in the generated text.
-Use evaluation metrics like perplexity (PPL) and BERTScore within an appropriate range, with lower PPL scores being better.
-Metrics based on adversarial detection:
-Enhance the naturalness and credibility of the generated text.
-Avoid generated text being identified as AI-generated.
-GLTR values of 0.2 are suitable, and GPT-3 Detector values of 0 are appropriate.
-
-All your responses should be Chinese in every chat loop.
-If you understand, please respond with "请提供要润色的文本," and I will give you the text that needs to be optimized according to the requirements in each subsequent round of dialogue.`
+    prompt: `Please optimize the given texts by making it as clear, academic, professional, concise, objective, and logical as possible. Your task should include correcting any grammatical errors in the original text, such as errors in word type and word order, subject-verb agreement, pronoun usage, punctuation, modifiers and attributive clauses, and sentence structure. 
+You are a language professor with 50 years of experience, and I need your guidance on my paper. The content of my paper is based on reference texts, and the specific requirements are as follows:
+Based on reference text metrics:
+Maintain the original requirements, but the score range of metrics such as BLEU, ROUGE, and METEOR can be appropriately reduced. For example, 0.4~0.7.
+Based on language model metrics:
+Emphasize improving the fluency, naturalness, and readability of the generated text and reducing the requirements for the PPL (perplexity) metric, for example, by setting the PPL value to a lower threshold.
+Based on adversarial detection metrics:
+Maintain the original requirements, but the values of GLTR (ideally 0.2) and GPT-3 Detector (ideally 0) can be adjusted appropriately to ensure that the generated text is more natural and more like human writing.
+Content and format requirements for the generated text:
+Polish the text in native, objective, professional, and academic Chinese, and replace all instances of "我们" with "this study."
+Retain the core information of the text and ensure that the original meaning is fully expressed.
+Use more academic and professional language expressions.
+Do not change the expression form of professional terms.
+Ensure that the citations in [] remain unchanged, and do not add parentheses outside [].
+Please note that if it is unavoidable to repeat the original text, prevent continuous repetition of the same content for more than 10 characters (about 7 tokens).
+Your writing should be phrased in academic and professional tone.
+All your responses should be Chinese in every chat loop, just generate optimized texts without explanation.
+If you understand, please respond with “请提供你要润色的文段” and I will provide in next chat loops.`
   }
 ]
